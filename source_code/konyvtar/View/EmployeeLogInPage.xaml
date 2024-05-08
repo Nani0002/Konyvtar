@@ -1,0 +1,61 @@
+﻿<Page x:Class="konyvtar.View.EmployeeLogInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:konyvtar.View"
+      xmlns:vm="clr-namespace:konyvtar.ViewModel"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployeeLogInPage">
+    <Page.Resources>
+        <vm:EmployeeLogInVM x:Key="VM"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource VM}" Background="#FFD69052">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Üdvözöljük!" FontSize="50" FontFamily="Calibri Light" Foreground="#FFDADADA" VerticalContentAlignment="Center" 
+               HorizontalContentAlignment="Center"/>
+        <Grid Grid.Column="1" Background="#FF1D1E2B">
+            <Label Margin="0,120,0,0" Height="50" VerticalAlignment="Top" Content="Bejelentkezés" FontSize="35" 
+                   HorizontalContentAlignment="Center" FontFamily="Calibri Light" Foreground="#FFACACAC"/>
+            
+            <Border VerticalAlignment="Center" BorderBrush="#FF444444" BorderThickness="0,2,0,2" Margin="0,20,0,0">
+                <StackPanel>
+                    
+                    <!--Felhasználónév-->
+                    <Grid Background="#FF23243D">
+                        <Image Source="/View/UserIcon.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="UsernameImage"/>
+                        <Label Content="Felhasználónév" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                               Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="UsernameLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" 
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Username}"
+                                 GotFocus="LoginGotFocus" LostFocus="LoginLostFocus"/>
+                    </Grid>
+
+                    <!--Jelszó-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/KeyIcon.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="PasswordImage"/>
+                        <Label Content="Jelszó" FontSize="20"  FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                               Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="PasswordLabel"/>
+                        <PasswordBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                     Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" 
+                                     VerticalContentAlignment="Center" Foreground="#FFACACAC" KeyUp="PB_KeyUp"
+                                     GotFocus="LoginGotFocus" LostFocus="LoginLostFocus" PasswordChar="*"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!--Ellenőrzés-->
+            <Border BorderBrush="#FFD69052" BorderThickness="0,2,2,2" VerticalAlignment="Bottom" Margin="-25,0,0,20" 
+                    HorizontalAlignment="Left" Height="50" Width="250" CornerRadius="25">
+                <Button Width="200" Content="Bejelentkezés" FontSize="20" HorizontalContentAlignment="Center" 
+                        Command="{Binding LogIn}" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

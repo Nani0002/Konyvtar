@@ -1,0 +1,105 @@
+﻿<Page x:Class="konyvtar.View.EditBookingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:konyvtar.View"
+      xmlns:vm="clr-namespace:konyvtar.ViewModel"
+      xmlns:model="clr-namespace:konyvtar.Model"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditBookingPage">
+    <Page.Resources>
+        <vm:EditBookingVM x:Key="VM"/>
+
+        <local:DateTimeToDateConverter x:Key="DateTimeToDateConverter"/>
+
+        <DataTemplate x:Key="UIT" DataType="{x:Type model:User}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Id}" FontSize="20"/>
+                <Label Content="{Binding Name}" ContentStringFormat="| {0}" FontSize="20" Grid.Column="1"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="BIT" DataType="{x:Type model:Book}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Id}" FontSize="20"/>
+                <Label Content="{Binding Title}" ContentStringFormat="| {0}" FontSize="20" Grid.Column="1"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource VM}" Background="#FFD69052">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Könyv kiválasztása-->
+        <Grid Background="#FF1D1E2B" Grid.Column="1">
+            <Border Background="#FF23243D" BorderBrush="#FFD69052" BorderThickness="2,2,2,2"  Height="60" Margin="-50,-200,0,0" CornerRadius="30">
+                <Grid  Margin="50,0,0,0">
+                    <Button Grid.Column="1" Grid.Row="0" Width="180" Margin="0,0,10,0" 
+                            HorizontalAlignment="Left" Content="Új könyv" FontSize="20" Click="NewBook_Click"
+                            Background="Transparent" FontFamily="Calibri Light" Foreground="#FFD69052"
+                            BorderThickness="0"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Books}" ItemTemplate="{StaticResource BIT}" SelectedItem="{Binding SelectedBook}" 
+                              Margin="200,5,50,5" VerticalContentAlignment="Center" BorderBrush="#FFD69052" BorderThickness="1"/>
+                </Grid>
+            </Border>
+            
+            <Border BorderBrush="#FF444444" BorderThickness="0,2,0,2" VerticalAlignment="Center" Margin="0,80,0,0">
+                <StackPanel>
+                    
+                    <!--Kezdete-->
+                    <Grid Background="#FF23243D">
+                        <Image Source="/View/DOB.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="StartImage"/>
+                        <Label Content="Kölcsönzés kezdete" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="StartLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="STextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Booking.Startdate, Converter={StaticResource DateTimeToDateConverter}}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Vége-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/DOB.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="EndImage"/>
+                        <Label Content="Kölcsönzés vége" FontSize="20"  FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="EndLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="ETextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Booking.Enddate, Converter={StaticResource DateTimeToDateConverter}}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!--Vissza gomb-->
+            <Border BorderBrush="#FFD69052" BorderThickness="0,2,2,2" VerticalAlignment="Bottom" Margin="-25,0,0,20" 
+                    HorizontalAlignment="Left" Height="50" Width="150" CornerRadius="25">
+                <Button Width="100" Content="Mégse" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="Cancel" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+
+            <!--Mentés-->
+            <Border BorderBrush="#FFD69052" BorderThickness="2,2,2,2" VerticalAlignment="Bottom" Margin="0,0,10,20" 
+                    HorizontalAlignment="Right" Height="50" Width="200" CornerRadius="25">
+                <Button Width="150" Content="Mentés" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="Save" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+        </Grid>
+        <Grid Background="#FFD69052">
+            <Label Content="Kölcsönzés" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="25" FontFamily="Calibri Light"/>
+        </Grid>
+    </Grid>
+</Page>

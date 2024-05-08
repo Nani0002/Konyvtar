@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="&#xD;&#xA;Interface-ek                         Logikái">
+    <Position X="4.521" Y="2.006" Height="0.75" Width="3.246" />
+  </Comment>
+  <Comment CommentText="&#xD;&#xA;Modellek">
+    <Position X="8.509" Y="1.958" Height="0.75" Width="8.506" />
+  </Comment>
+  <Comment CommentText="&#xD;&#xA;Converterek">
+    <Position X="17.693" Y="1.908" Height="0.788" Width="3.411" />
+  </Comment>
+  <Comment CommentText="&#xD;&#xA;View Modellek">
+    <Position X="4.5" Y="8.25" Height="0.75" Width="8.754" />
+  </Comment>
+  <Comment CommentText="&#xD;&#xA;Megjelenés">
+    <Position X="17.75" Y="7.25" Height="0.75" Width="8.448" />
+  </Comment>
+  <Class Name="konyvtar.BusinessLogic.AdminLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAIAAABAAgAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\AdminLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.BusinessLogic.BookingsLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAQIAAAAAgAAAAIAAA=</HashCode>
+      <FileName>BusinessLogic\BookingsLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.BusinessLogic.BookLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAACAAIAACAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\BookLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.BusinessLogic.LogInLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\LogInLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.BusinessLogic.UserLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEAAAAACAAAAAAAAAgAAgAAAAAAgA=</HashCode>
+      <FileName>BusinessLogic\UserLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.Model.Author">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAACIAIQAiACEAAAAAAAIAAAACgA=</HashCode>
+      <FileName>Model\Author.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.Model.Book">
+    <Position X="13.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQSAggEEgAqAIBAIiCAQAIgAAACBIAAAAQAgA=</HashCode>
+      <FileName>Model\Book.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.Model.Booking">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAADICAAACAgAABAACAAQAAgAAAAAAAQAAIAAEAAAwA=</HashCode>
+      <FileName>Model\Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.Model.Employee">
+    <Position X="15.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAgAAAAAQAAAAEAAACAAAAAgAAAgA=</HashCode>
+      <FileName>Model\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.Model.konyvtarContext" Collapsed="true">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAwAAAAAAAAAAAAmABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\konyvtarContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.Model.User">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAgAAAgIAAIAAQACAIEAAAiAAAQIAAAEgI=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.View.AdminPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AdminPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.AmountToBrushConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\AmountToBrushConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.BoolToBrushConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BoolToBrushConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.BorrowedToBrushConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BorrowedToBrushConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.DateTimeToDateConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\DateTimeToDateConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EditAuthorPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAQAAAAAAAAIAISAgAAAAABAAAAAAAAABAAAA=</HashCode>
+      <FileName>View\EditAuthorPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EditBookingPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAQEAAAAAAAIAICAAAAAAABAAAIAAAAABAAQA=</HashCode>
+      <FileName>View\EditBookingPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EditBookPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIIICAAAQAUABAAIIAgAAABAAAA=</HashCode>
+      <FileName>View\EditBookPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EditEmployeePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAQAAAAAQQAIAACAAABAEABAAAAAAAAABAAAA=</HashCode>
+      <FileName>View\EditEmployeePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EditUserPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAIAICAAAAAAABAAgAAAAAABAAAA=</HashCode>
+      <FileName>View\EditUserPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EmployeeLogInPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABAAAAAAAQAAAAACAAAAAgAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>View\EmployeeLogInPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.EmployeePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAgAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\EmployeePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.ErrorWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ErrorWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.GenreToStringConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\GenreToStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.PriviligeToBrushConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\PriviligeToBrushConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.PriviligeToRadioConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\PriviligeToRadioConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.View.UserBookingsPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UserBookingsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="konyvtar.ViewModel.AdminVM" Collapsed="true">
+    <Position X="4.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAIAAABAAgAIAQAACAEgAIAAACCAAAAgAAA=</HashCode>
+      <FileName>ViewModel\AdminVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EditAuthorVM" Collapsed="true">
+    <Position X="11.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\EditAuthorVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EditBookingVM" Collapsed="true">
+    <Position X="8" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAACAAAAAgIBAAACAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\EditBookingVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EditBookVM" Collapsed="true">
+    <Position X="9.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAJAAAICQAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\EditBookVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EditEmployeeVM" Collapsed="true">
+    <Position X="6.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\EditEmployeeVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EditUserVM" Collapsed="true">
+    <Position X="6.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>ViewModel\EditUserVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EmployeeLogInVM" Collapsed="true">
+    <Position X="8" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAEAAAAgABACAAAAAgAgAAA=</HashCode>
+      <FileName>ViewModel\EmployeeLogInVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.EmployeeVM" Collapsed="true">
+    <Position X="4.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBQAACAAAAAAAAAEACCIICAAiIAgAACgAKAAABCgAgA=</HashCode>
+      <FileName>ViewModel\EmployeeVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.ViewModel.UserBookingsVM" Collapsed="true">
+    <Position X="9.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAgAAAAIUAIAABACAAYAAAAAAACAAAgAQA=</HashCode>
+      <FileName>ViewModel\UserBookingsVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.App" Collapsed="true">
+    <Position X="23" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="konyvtar.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="konyvtar.BusinessLogic.IAdminLogic" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAIAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\IAdminLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="konyvtar.BusinessLogic.IBookingsLogic" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAQIAAAAAAAAAAIAAA=</HashCode>
+      <FileName>BusinessLogic\IBookingsLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="konyvtar.BusinessLogic.IBookLogic" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAACAAIAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\IBookLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="konyvtar.BusinessLogic.ILogInLogic" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessLogic\ILogInLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="konyvtar.BusinessLogic.IUserLogic" Collapsed="true">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAEAAAAACAAAAAAAAAgAAAAAAAAAgA=</HashCode>
+      <FileName>BusinessLogic\IUserLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="konyvtar.Data.Genre">
+    <Position X="15.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAEAABABAACIBAAAAAAAAACIFAAAAAICAAEAAAAAA=</HashCode>
+      <FileName>Data\Genre.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditAuthorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditBookingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditBookPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditEmployeePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditUserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EmployeeLogInPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ErrorWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UserBookingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

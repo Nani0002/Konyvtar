@@ -1,0 +1,212 @@
+﻿<Page x:Class="konyvtar.View.EditBookPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:konyvtar.View"
+      xmlns:vm="clr-namespace:konyvtar.ViewModel"
+      xmlns:model="clr-namespace:konyvtar.Model"
+      xmlns:num="http://gu.se/NumericInput"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditBookPage">
+    <Page.Resources>
+        <vm:EditBookVM x:Key="VM"/>
+        <local:DateTimeToDateConverter x:Key="DateTimeToDateConverter"/>
+        <local:GenreToStringConverter x:Key="GenreToStringConverter"/>
+        <DataTemplate x:Key="AIT" DataType="{x:Type model:Author}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="{Binding Id}" FontSize="20" FontFamily="Calibri Light" Width="25"/>
+                <Label Content="{Binding Name}" ContentStringFormat="| {0}" FontSize="20" Grid.Column="1"  FontFamily="Calibri Light" Width="300"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource VM}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Background="#FF1D1E2B" Grid.Column="1">
+            
+            <!--1. Oldal-->
+            <Grid x:Name="Section1" Margin="0,0,0,100" Visibility="Collapsed">
+                <Border BorderBrush="#FF444444" BorderThickness="0,2,0,2" VerticalAlignment="Center" Margin="0,-80,0,0">
+                    <StackPanel>
+                        
+                        <!--Cím mező-->
+                        <Grid Background="#FF23243D">
+                            <Image Source="/View/Title.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="TitleImage"/>
+                            <Label Content="Cím" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="TitleLabel"/>
+                            <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="TTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Title}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                        </Grid>
+
+                        <!--Leírás-->
+                        <Grid Background="#FF23243D" Margin="0,5,0,0">
+                            <Image Source="/View/Description.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="DescriptionImage"/>
+                            <Label Content="Leírás" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="DescriptionLabel"/>
+                            <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="DTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Description}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                        </Grid>
+
+                        <!--Műfaj-->
+                        <Grid Background="#FF23243D" Margin="0,5,0,0" Height="50">
+                            <Label Content="Műfaj: " Grid.Row="3" HorizontalAlignment="Left" FontFamily="Calibri Light" Foreground="#FFACACAC" 
+                                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20" Margin="60,0,0,0"/>
+                            <Image Source="/View/Genre.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                            <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Genres}" Margin="200,0,50,0" FontSize="20" FontFamily="Calibri Light"
+                                      SelectedItem="{Binding Book.Genre, Converter={StaticResource GenreToStringConverter}}" VerticalContentAlignment="Center"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!--Szerző kiválasztása-->
+                <Border Background="#FF23243D" BorderBrush="#FFD69052" BorderThickness="2,2,2,2"  Height="60" Margin="-50,160,0,0" CornerRadius="30">
+                    <Grid Margin="50,0,0,0">
+                        <Button Grid.Column="1" Grid.Row="0" Width="180" Margin="0,0,10,0" 
+                            HorizontalAlignment="Left" Content="Új szerző" FontSize="20" Click="NewAuthor_Click"
+                            Background="Transparent" FontFamily="Calibri Light" Foreground="#FFD69052"
+                            BorderThickness="0"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Authors}" ItemTemplate="{StaticResource AIT}" SelectedItem="{Binding SelectedAuthor}" 
+                              Margin="198,5,48,5" VerticalContentAlignment="Center" BorderBrush="#FFD69052" BorderThickness="1"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="#FFD69052" BorderThickness="0,2,2,2" VerticalAlignment="Bottom" Margin="-25,0,0,0" 
+                    HorizontalAlignment="Left" Height="60" Width="230" CornerRadius="30" Background="#FF23243D">
+                    <Button Width="180" Content="Módosítás" FontSize="20" HorizontalContentAlignment="Center" 
+                        Background="{x:Null}" FontFamily="Calibri Light" Click="EditAuthor_Click"
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+
+                </Border>
+            </Grid>
+
+            <!--2. Oldal-->
+            <Grid x:Name="Section2" Margin="0,0,0,100" Visibility="Visible">
+                <Border BorderBrush="#FF444444" BorderThickness="0,2,0,2" VerticalAlignment="Center" Margin="0,-120,0,0">
+                    <StackPanel>
+
+                        <!--ISBN kód-->
+                        <Grid Background="#FF23243D">
+                            <Image Source="/View/ISBN.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="ISBNImage"/>
+                            <Label Content="ISBN kód" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="ISBNLabel"/>
+                            <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="ITextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Isbn}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                        </Grid>
+
+                        <!--Kiadó-->
+                        <Grid Background="#FF23243D" Margin="0,5,0,0">
+                            <Image Source="/View/Publisher.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="PublisherImage"/>
+                            <Label Content="Kiadó" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="PublisherLabel"/>
+                            <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="PTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Publisher}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                        </Grid>
+
+                        <!--Nyelv-->
+                        <Grid Background="#FF23243D" Margin="0,5,0,0">
+                            <Image Source="/View/Language.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="LanguageImage"/>
+                            <Label Content="Nyelv" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="LanguageLabel"/>
+                            <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="LTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Language}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Grid Margin="0,200,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="310"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Kép kiválasztása-->
+                    <StackPanel Grid.Row="3" Grid.RowSpan="2" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Center">
+                            <Border Margin="-25,0,0,10" BorderBrush="#FFD69052" BorderThickness="2" CornerRadius="25">
+                                <Button Content="Kép hozzáadása" FontSize="20" Height="50" Width="175" HorizontalAlignment="Right" 
+                                    Margin="35,0,10,0" Click="AddImg" Background="Transparent"
+                                    Foreground="#FFD69052" FontFamily="Calibr Light" BorderThickness="0"/>
+                            </Border>
+                            <Border Margin="-25,0,0,0" BorderBrush="#FFD69052" BorderThickness="2" CornerRadius="25">
+                                <Button Content="Kép Törlése" FontSize="20" Height="50" Width="175" HorizontalAlignment="Right" 
+                                    Margin="35,0,10,0" Click="RemoveImg" Background="Transparent" 
+                                    Foreground="#FFD69052" FontFamily="Calibr Light" BorderThickness="0"/>
+                            </Border>
+
+                        </StackPanel>
+                        <Border  Background="#FF898989" BorderThickness="2,2,2,2" BorderBrush="#FF545454" MinWidth="100" MaxWidth="100" Margin="0,5" MaxHeight="140" MinHeight="140">
+                            <Image Source="{Binding Book.Img}" MinWidth="100" MaxWidth="100"/>
+                        </Border>
+                    </StackPanel>
+
+                    <Border Grid.Column="1" BorderBrush="#FF444444" BorderThickness="0,2,0,2" VerticalAlignment="Center">
+                        <StackPanel>
+                            
+                            <!--Kiadás dátuma-->
+                            <Grid Background="#FF23243D" Margin="0,5,0,0">
+                                <Image Source="/View/DOB.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="DateImage"/>
+                                <Label Content="Kiadás Dátuma" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                            Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="DateLabel"/>
+                                <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                            Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="DATextBox"
+                                            VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding Book.Releasedate, Converter={StaticResource DateTimeToDateConverter}}"
+                                            GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                            </Grid>
+
+                            <!--Elérhető mennyiség-->
+                            <Grid Background="#FF23243D" Margin="0,5,0,0">
+                                <Label Content="Elérhető" FontSize="20" FontFamily="Calibri Light" VerticalAlignment="Center" Foreground="#FFACACAC" Margin="10,0,0,0"/>
+                                <num:SpinnerDecorator Grid.Column="1" MinWidth="125" HorizontalAlignment="Stretch" Height="50" Margin="100,0,10,0" >
+                                    <num:IntBox  Text="0" Value="{Binding Book.Amount}" FontSize="20" MinValue="0"
+                                                 AllowSpinners="True" x:Name="Amount"
+                                                 Background="Transparent" Foreground="#FFACACAC"/>
+                                </num:SpinnerDecorator>
+                            </Grid>
+
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+            
+            <!--Vissza gomb-->
+            <Border BorderBrush="#FFD69052" BorderThickness="0,2,2,2" VerticalAlignment="Bottom" Margin="-25,0,0,20" 
+                    HorizontalAlignment="Left" Height="50" Width="150" CornerRadius="25">
+                <Button Width="100" Content="Mégse" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="Back_Click" x:Name="Back" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+
+            </Border>
+
+            <!--Mentés Gomb-->
+            <Border BorderBrush="#FFD69052" BorderThickness="2,2,2,2" VerticalAlignment="Bottom" Margin="0,0,10,20" 
+                    HorizontalAlignment="Right" Height="50" Width="200" CornerRadius="25">
+                <Button Width="150" Content="Következő" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="Next_Click" x:Name="Next" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+        </Grid>
+        <Grid Background="#FFD69052">
+            <Label Content="Könyv" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="25" FontFamily="Calibri Light"/>
+        </Grid>
+        
+    </Grid>
+</Page>

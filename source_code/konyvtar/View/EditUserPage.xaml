@@ -1,0 +1,112 @@
+﻿<Page x:Class="konyvtar.View.EditUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:konyvtar.View"
+      xmlns:num="http://gu.se/NumericInput"
+      xmlns:vm="clr-namespace:konyvtar.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditUserPage">
+    <Page.Resources>
+        <vm:EditUserVM x:Key="VM"/>
+        <local:DateTimeToDateConverter x:Key="DateTimeToDateConverter"/>
+    </Page.Resources>
+    <Grid DataContext="{StaticResource VM}" Background="#FFD69052">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Ügyfél" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="25" FontFamily="Calibri Light"/>
+        <Grid Background="#FF1D1E2B" Grid.Column="1">
+            <Border BorderBrush="#FF444444" BorderThickness="0,2,0,2" VerticalAlignment="Center" Margin="0,-100,0,0">
+                <StackPanel>
+                    
+                    <!--Ügyfél neve-->
+                    <Grid Background="#FF23243D">
+                        <Image Source="/View/UserIcon.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="NameImage"/>
+                        <Label Content="Teljes Név" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="NameLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="NTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Name}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Telefonszám-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/Phone.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="PhoneImage"/>
+                        <Label Content="Telefonszám" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="PhoneLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="PTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Phone}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Email cím-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/Email.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="EmailImage"/>
+                        <Label Content="Email Cím" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="EmailLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="ETextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Email}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Lakcím-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/Adress.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="AdressImage"/>
+                        <Label Content="Lakcím" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="AdressLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="ATextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Address}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Igazolványszám-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/IDCard.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="IDCardImage"/>
+                        <Label Content="Személyi Igazolvány" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="IDCardLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="IDTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Idcard}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+
+                    <!--Születési dátum-->
+                    <Grid Background="#FF23243D" Margin="0,5,0,0">
+                        <Image Source="/View/DOB.png" Height="30" HorizontalAlignment="Left" Margin="20,0,0,0" x:Name="DOBImage"/>
+                        <Label Content="Születési dátum" FontSize="20" FontFamily="Calibri Light" VerticalContentAlignment="Center" 
+                                   Margin="60,0,0,0" Foreground="#FFACACAC" x:Name="DOBLabel"/>
+                        <TextBox FontSize="20"  FontFamily="Calibri Light" VerticalAlignment="Top" 
+                                 Height="50" Background="Transparent" Margin="10,0,0,0" BorderBrush="{x:Null}" x:Name="DOBTextBox"
+                                 VerticalContentAlignment="Center" Foreground="#FFACACAC" Text="{Binding User.Dob, Converter={StaticResource DateTimeToDateConverter}}"
+                                 GotFocus="FormGotFocus" LostFocus="FormLostFocus"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!--Vissza Gomb-->
+            <Border BorderBrush="#FFD69052" BorderThickness="0,2,2,2" VerticalAlignment="Bottom" Margin="-25,0,0,20" 
+                    HorizontalAlignment="Left" Height="50" Width="150" CornerRadius="25">
+                <Button Width="100" Content="Mégse" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="Cancel" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+
+            <!--Mentés Gomb-->
+            <Border BorderBrush="#FFD69052" BorderThickness="2,2,2,2" VerticalAlignment="Bottom" Margin="0,0,10,20" 
+                    HorizontalAlignment="Right" Height="50" Width="200" CornerRadius="25">
+                <Button Width="150" Content="Mentés" FontSize="20" HorizontalContentAlignment="Center" 
+                        Click="AddUser" Background="{x:Null}" FontFamily="Calibri Light" 
+                        Foreground="#FFD69052" BorderBrush="{x:Null}"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
